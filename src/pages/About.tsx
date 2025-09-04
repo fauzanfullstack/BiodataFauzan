@@ -38,7 +38,7 @@ export default function About() {
     {
       title: "About Me",
       content:
-        "Hi! I’m Fauzan, a passionate web developer who loves building modern, responsive web applications with clean design and smooth user experience. I enjoy exploring new technologies and integrating AI in my projects.",
+        "I am a student of SMKN 1 Garut majoring in Software and Game Development (PPLG). I have a great interest in the world of technology and programming, with a basic foundation in web creation and development, using HTML, CSS, JavaScript, React, and Laravel. I am ready to learn, collaborate in a team, and contribute with new ideas in accordance with current developments.",
     },
     {
       title: "Personal Information",
@@ -49,6 +49,17 @@ export default function About() {
         "Email: programerfauzan@gmail.com",
       ],
     },
+    
+    {
+      title: "Soft Skills",
+      content: ["- Problem-solving", "- Teamwork", "- Adaptability", "- Creativity", "-AI Prompt", "-The Will to Learn new Things"],
+    },
+
+     {
+      title: "Hard Skills",
+      content: ["- HTML & CSS", "- Laravel (PHP Framework)", "- React", "- JavaScript", "-TypeScript", "-MySql"],
+    },
+
     {
       title: "Experience & Projects",
       content: [
@@ -56,10 +67,8 @@ export default function About() {
         "- Developed a simple Hotel Management System using Laravel, PHP, and SQL",
       ],
     },
-    {
-      title: "Soft Skills",
-      content: ["- Problem-solving", "- Teamwork", "- Adaptability", "- Creativity"],
-    },
+
+
     {
       title: "Hobbies & Interests",
       content: [
@@ -68,14 +77,7 @@ export default function About() {
         "- Exploring new technologies and AI integration",
       ],
     },
-    {
-      title: "Goals & Aspirations",
-      content: [
-        "- Pursue a Bachelor’s degree in Information Systems",
-        "- Keep up with technological advancements",
-        "- Own an agricultural business and achieve financial freedom",
-      ],
-    },
+    
   ];
 
   // Layer partikel
