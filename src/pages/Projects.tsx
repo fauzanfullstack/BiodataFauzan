@@ -79,15 +79,14 @@ export default function Projects() {
 
   // Layer partikel
   const particlesLayer = (size: number, opacity: number, color: string) => (
-    <Box
+    <MotionBox
       position="absolute"
       inset={0}
       zIndex={-2}
       bgImage={`radial-gradient(${color} ${size}px, transparent ${size}px)`}
       bgSize={`${size * 2}px ${size * 2}px`}
       style={{
-        translateX: particlesX,
-        translateY: particlesY,
+        transform: `translate(${particlesX.get()}px, ${particlesY.get()}px)`,
       }}
       opacity={opacity}
       pointerEvents="none"
@@ -116,8 +115,7 @@ export default function Projects() {
         bgImage="linear-gradient(0deg, rgba(0,255,0,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(0,255,0,0.05) 1px, transparent 1px)"
         bgSize="60px 60px"
         style={{
-          translateX: gridX,
-          translateY: gridY,
+          transform: `translate(${gridX.get()}px, ${gridY.get()}px)`,
         }}
         pointerEvents="none"
       />
@@ -147,14 +145,23 @@ export default function Projects() {
               overflow="hidden"
               cursor="pointer"
               whileHover={{ y: -10, scale: 1.03 }}
-              _hover={{ boxShadow: "0 0 20px rgba(0,198,255,0.6), 0 0 40px rgba(0,114,255,0.5), 0 0 60px rgba(0,229,255,0.4)" }}
+              _hover={{
+                boxShadow:
+                  "0 0 20px rgba(0,198,255,0.6), 0 0 40px rgba(0,114,255,0.5), 0 0 60px rgba(0,229,255,0.4)",
+              }}
               transition={{ type: "spring", stiffness: 200, damping: 10 }}
             >
               <Image src={project.img} alt={project.title} w="100%" h="200px" objectFit="cover" />
               <Box p={4}>
-                <Badge colorScheme="cyan" mb={2}>{project.category}</Badge>
-                <Text fontWeight="bold" fontSize="xl" mb={2} color="whiteAlpha.900">{project.title}</Text>
-                <Text fontSize="sm" color="whiteAlpha.800">{project.description}</Text>
+                <Badge colorScheme="cyan" mb={2}>
+                  {project.category}
+                </Badge>
+                <Text fontWeight="bold" fontSize="xl" mb={2} color="whiteAlpha.900">
+                  {project.title}
+                </Text>
+                <Text fontSize="sm" color="whiteAlpha.800">
+                  {project.description}
+                </Text>
               </Box>
             </MotionBox>
           ))}

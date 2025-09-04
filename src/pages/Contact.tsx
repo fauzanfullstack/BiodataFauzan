@@ -24,15 +24,14 @@ export default function Contact() {
   }, [mouseX, mouseY]);
 
   const particlesLayer = (size: number, opacity: number, color: string) => (
-    <Box
+    <MotionBox
       position="absolute"
       inset={0}
       zIndex={-2}
       bgImage={`radial-gradient(${color} ${size}px, transparent ${size}px)`}
       bgSize={`${size * 2}px ${size * 2}px`}
       style={{
-        translateX: particlesX,
-        translateY: particlesY,
+        transform: `translate(${particlesX.get()}px, ${particlesY.get()}px)`,
       }}
       opacity={opacity}
       pointerEvents="none"
