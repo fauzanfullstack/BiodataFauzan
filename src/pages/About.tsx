@@ -49,17 +49,28 @@ export default function About() {
         "Email: programerfauzan@gmail.com",
       ],
     },
-    
     {
       title: "Soft Skills",
-      content: ["- Problem-solving", "- Teamwork", "- Adaptability", "- Creativity", "-AI Prompt", "-The Will to Learn new Things"],
+      content: [
+        "- Problem-solving",
+        "- Teamwork",
+        "- Adaptability",
+        "- Creativity",
+        "- AI Prompt",
+        "- The Will to Learn new Things",
+      ],
     },
-
-     {
+    {
       title: "Hard Skills",
-      content: ["- HTML & CSS", "- Laravel (PHP Framework)", "- React", "- JavaScript", "-TypeScript", "-MySql"],
+      content: [
+        "- HTML & CSS",
+        "- Laravel (PHP Framework)",
+        "- React",
+        "- JavaScript",
+        "- TypeScript",
+        "- MySql",
+      ],
     },
-
     {
       title: "Experience & Projects",
       content: [
@@ -67,8 +78,6 @@ export default function About() {
         "- Developed a simple Hotel Management System using Laravel, PHP, and SQL",
       ],
     },
-
-
     {
       title: "Hobbies & Interests",
       content: [
@@ -77,7 +86,6 @@ export default function About() {
         "- Exploring new technologies and AI integration",
       ],
     },
-    
   ];
 
   // Layer partikel
@@ -89,8 +97,7 @@ export default function About() {
       bgImage={`radial-gradient(${color} ${size}px, transparent ${size}px)`}
       bgSize={`${size * 2}px ${size * 2}px`}
       style={{
-        translateX: particlesX,
-        translateY: particlesY,
+        transform: `translate(${particlesX.get()}px, ${particlesY.get()}px)`,
       }}
       opacity={opacity}
       pointerEvents="none"
@@ -98,7 +105,14 @@ export default function About() {
   );
 
   return (
-    <Box minH="100vh" display="flex" flexDirection="column" position="relative" overflow="hidden" bg="black">
+    <Box
+      minH="100vh"
+      display="flex"
+      flexDirection="column"
+      position="relative"
+      overflow="hidden"
+      bg="black"
+    >
       {/* Neon Grid */}
       <MotionBox
         position="absolute"
@@ -108,8 +122,7 @@ export default function About() {
                   linear-gradient(90deg, rgba(0,255,0,0.05) 1px, transparent 1px)`}
         bgSize="60px 60px"
         style={{
-          translateX: gridX,
-          translateY: gridY,
+          transform: `translate(${gridX.get()}px, ${gridY.get()}px)`,
         }}
         pointerEvents="none"
       />
@@ -136,7 +149,12 @@ export default function About() {
                   "0 0 20px rgba(0,198,255,0.6), 0 0 40px rgba(0,114,255,0.5), 0 0 60px rgba(0,229,255,0.4)",
               }}
             >
-              <Text fontWeight="bold" fontSize="xl" mb={3} color="whiteAlpha.900">
+              <Text
+                fontWeight="bold"
+                fontSize="xl"
+                mb={3}
+                color="whiteAlpha.900"
+              >
                 {card.title}
               </Text>
               {Array.isArray(card.content) ? (
@@ -173,17 +191,28 @@ export default function About() {
               <Box key={item.skill} mb={4}>
                 <HStack justify="space-between" mb={1}>
                   <MotionText color="whiteAlpha.900">{item.skill}</MotionText>
-                  <MotionText color="whiteAlpha.800">{item.value}%</MotionText>
+                  <MotionText color="whiteAlpha.800">
+                    {item.value}%
+                  </MotionText>
                 </HStack>
                 <Box bg="whiteAlpha.300" borderRadius="md" h="6px">
-                  <MotionBox bg="cyan.400" h="6px" w={`${item.value}%`} borderRadius="md" />
+                  <MotionBox
+                    bg="cyan.400"
+                    h="6px"
+                    w={`${item.value}%`}
+                    borderRadius="md"
+                  />
                 </Box>
               </Box>
             ))}
           </MotionBox>
 
           {/* Call to Action Button */}
-          <Box gridColumn={{ base: "span 1", md: "span 2" }} textAlign="center" mt={4}>
+          <Box
+            gridColumn={{ base: "span 1", md: "span 2" }}
+            textAlign="center"
+            mt={4}
+          >
             <MotionBox>
               <Button
                 size="lg"
@@ -195,7 +224,8 @@ export default function About() {
                 bgGradient="linear(to-r, cyan.400, blue.500, cyan.500)"
                 _hover={{
                   transform: "scale(1.08)",
-                  bgGradient: "linear(to-r, cyan.500, cyan.400, blue.500)",
+                  bgGradient:
+                    "linear(to-r, cyan.500, cyan.400, blue.500)",
                 }}
                 onClick={() => (window.location.pathname = "/projects")}
               >
